@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package types;
+
+service BlockGenerator {
+	rpc Generate(GenerateRequest) returns (GenerateResponse) {}
+}
+
+message GenerateRequest {
+	bytes Payload = 1;
+}
+
+message GenerateResponse {
+	string Md5 = 1;
+	bytes Id = 2;
+}

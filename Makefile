@@ -7,8 +7,8 @@ BIN_OUT=./bin
 
 build:
 	@echo "$(APP_BINARY_NAME) ..."
-	CGO_ENABLED=0 go build $(LDFLAGS) -v -o $(BIN_OUT) -a -tags="$(BUILD_TAGS)" ./cmd/sender/.
-	CGO_ENABLED=0 go build $(LDFLAGS) -v -o $(BIN_OUT) -a -tags="$(BUILD_TAGS)" ./cmd/receiver/.
+	CGO_ENABLED=0 go build $(LDFLAGS) -v -o $(BIN_OUT)/sender -a -tags="$(BUILD_TAGS)" ./cmd/sender/.
+	CGO_ENABLED=0 go build $(LDFLAGS) -v -o $(BIN_OUT)/receiver -a -tags="$(BUILD_TAGS)" ./cmd/receiver/.
 	@chown $(UID):$(GID) -R ./bin go.*
 
 gen:
